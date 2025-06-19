@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "GihanTipCalculator/1.0.0": {
+        "runtime": {
+          "GihanTipCalculator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GihanTipCalculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,59 @@
+﻿@model GihanTipCalculator.Models.TipModel
+
+@{
+    ViewData["Title"] = "Tip Calculator";  
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white text-center">
+                    <h2>Tip Calculator</h2> 
+                </div>
+                <div class="card-body">
+
+                    @* Form to input meal cost *@
+                    <form asp-action="Index" method="post">
+                        <div class="mb-3">
+                            <label for="MealCost" class="form-label">Cost of Meal ($)</label>
+                            <input asp-for="MealCost" class="form-control" placeholder="Enter meal cost" />
+
+
+                            <!-- Show errors -->
+                            <span class="text-danger">
+                                @Html.ValidationMessageFor(m => m.MealCost)
+                            </span>
+                        </div>
+
+                        <div class="d-grid d-md-flex gap-2">
+                            <button type="submit" class="btn btn-success">Calculate</button> 
+                            <a href="/" class="btn btn-outline-secondary">Clear</a>
+                        </div>
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <div class="mb-3">
+                        <!-- Tip labels and values -->
+                        <h5>Tip Amounts</h5> 
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>15% Tip:</span>
+                                <strong>@(((decimal)ViewBag.Tip15).ToString("C"))</strong> 
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>20% Tip:</span>
+                                <strong>@(((decimal)ViewBag.Tip20).ToString("C"))</strong> 
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>25% Tip:</span> 
+                                <strong>@(((decimal)ViewBag.Tip25).ToString("C"))</strong> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
